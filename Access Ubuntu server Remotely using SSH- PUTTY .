@@ -1,0 +1,190 @@
+# Access Ubuntu Server Remotely Using SSH and PuTTY
+
+## Project Overview
+
+This repository demonstrates how to remotely access an Ubuntu Server using the SSH protocol with the PuTTY client. Remote server access allows administrators and cybersecurity students to manage systems securely over a network.
+
+This project explains the process of installing and configuring SSH on Ubuntu and connecting to the server remotely from a Windows system using PuTTY.
+
+---
+
+## Technologies Used
+
+- Ubuntu Server
+- SSH (Secure Shell)
+- OpenSSH Server
+- PuTTY SSH Client
+- VirtualBox (for virtual environment)
+
+---
+
+## Lab Environment
+
+Host Machine (Windows)
+
+│
+
+├── VirtualBox
+
+│
+
+└── Ubuntu Server
+
+  │
+
+  └── SSH Remote Connection using PuTTY
+
+---
+
+## Installation and Configuration Steps
+
+### Step 1: Download PuTTY
+
+Download the PuTTY SSH client from the official website.
+
+https://www.putty.org
+
+Install PuTTY on your Windows system.
+
+---
+
+### Step 2: Configure PuTTY
+
+After installation, open PuTTY.
+
+You will see the PuTTY configuration interface where you can specify the IP address of the remote Ubuntu server.
+
+---
+
+### Step 3: Configure Ubuntu Network Adapter
+
+If Ubuntu is running inside VirtualBox, change the network adapter mode to:
+
+Bridge Adapter
+
+This allows the virtual machine to obtain an IP address from the same network as the host machine.
+
+---
+
+### Step 4: Find Ubuntu Server IP Address
+
+Run the following command in the Ubuntu terminal:
+
+ip addr
+
+or
+
+hostname -I
+
+Example output:
+
+192.168.1.105
+
+This IP address will be used to connect through PuTTY.
+
+---
+
+### Step 5: Enable Remote Access (Install SSH)
+
+Update the system:
+
+sudo apt update
+
+Install OpenSSH Server:
+
+sudo apt install openssh-server
+
+---
+
+### Step 6: Start SSH Service
+
+Start the SSH service:
+
+sudo systemctl start ssh
+
+Enable SSH service at boot:
+
+sudo systemctl enable ssh
+
+Verify the service status:
+
+sudo systemctl status ssh
+
+---
+
+### Step 7: Configure PuTTY with Server IP
+
+1. Open PuTTY
+2. Enter the Ubuntu server IP address
+3. Select connection type as SSH
+4. Click Open
+
+---
+
+### Step 8: Access Ubuntu Server
+
+A login terminal will appear.
+
+Enter your Ubuntu username and password.
+
+Example:
+
+login as: ubuntu
+password: ********
+
+You will now have remote access to the Ubuntu server.
+
+---
+
+### Step 9: Verify Remote Connection
+
+Once logged in successfully, you can run Linux commands remotely.
+
+Example command:
+
+whoami
+
+This confirms that the remote SSH session is active.
+
+---
+
+## Full Document
+
+⚠️ Note:
+
+GitHub cannot preview large `.docx` files directly in the browser.  
+However, the complete guide can be downloaded from this repository.
+
+Download the full guide below:
+
+putty.docx
+
+---
+
+## Repository Structure
+
+remote-ubuntu-ssh-putty
+
+│
+
+├── README.md  
+├── putty.docx  
+└── screenshots
+
+---
+
+## Learning Outcomes
+
+After completing this lab you will understand:
+
+- How to enable SSH on Ubuntu
+- How to configure remote server access
+- How to connect to a Linux server using PuTTY
+- Basic remote system administration
+
+---
+
+## Author
+
+Cybersecurity Lab Project  
+Remote Ubuntu Server Access using SSH and PuTTY
